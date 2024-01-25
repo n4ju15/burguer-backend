@@ -1,11 +1,14 @@
 const express = require('express') // Requer o Express para funcionar
 const uuid = require('uuid') // Requer a biblioteca UUID para funcionar
+const cors = require('cors')
 
 const port = 3001 // Variável que guarda a porta onde estou rodando o projeto
 
 const app = express() // Defino que Express() agora pode ser chamado usando apenas "app"
 
 app.use(express.json()) // Avisa ao Express que será usado JSON como padrão
+
+app.use(cors())
 
 const orders = [] // Salva os pedidos em um array
 
