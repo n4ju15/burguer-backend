@@ -1,8 +1,8 @@
-const express = require('express') // Requer o Express para funcionar
-const uuid = require('uuid') // Requer a biblioteca UUID para funcionar
-const cors = require('cors')
+import { Express } from 'express' // Requer o Express para funcionar
+import { v4 as uuidv4 } from 'uuid' // Requer a biblioteca UUID para funcionar
+import cors from 'cors'
 
-const port = 3001 // Variável que guarda a porta onde estou rodando o projeto
+const port = process.env.PORT || 3001 // Variável que guarda a porta onde estou rodando o projeto
 
 const app = express() // Defino que Express() agora pode ser chamado usando apenas "app"
 
@@ -42,7 +42,7 @@ app.use(details)
 app.post('/orders', (request, response) => {
     const { order, clientName, price, status } = request.body
 
-    const newOrder = { id: uuid.v4(), order, clientName, price, status: "Em preparação" }
+    const newOrder = { id: uuidv4(), order, clientName, price, status: "Em preparação" }
 
     orders.push(newOrder)
 
