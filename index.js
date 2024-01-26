@@ -38,6 +38,11 @@ const details = (request, response, next) => {
 }
 app.use(details)
 
+
+app.get('/', (request, response) => {
+    return response.json('Helo World!')
+})
+
 // Rota para receber pedidos
 app.post('/orders', (request, response) => {
     const { order, clientName, price, status } = request.body
