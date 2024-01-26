@@ -38,7 +38,7 @@ const details = (request, response, next) => {
 }
 app.use(details)
 
-
+// Rota para testar o servidor
 app.get('/', (request, response) => {
     return response.json('Helo World!')
 })
