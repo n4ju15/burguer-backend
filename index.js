@@ -1,4 +1,4 @@
-import { Express } from 'express' // Requer o Express para funcionar
+import express from 'express' // Requer o Express para funcionar
 import { v4 as uuidv4 } from 'uuid' // Requer a biblioteca UUID para funcionar
 import cors from 'cors'
 
